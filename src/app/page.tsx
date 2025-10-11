@@ -194,10 +194,10 @@ export default function Home() {
         <Container size="md">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-4">
-              What Our Brides Say
+              What Our Clients Say
             </h2>
             <p className="text-lg text-charcoal/70">
-              70+ five-star reviews from happy brides
+              500+ satisfied clients with 4.9/5 rating
             </p>
           </div>
 

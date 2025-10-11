@@ -1,0 +1,30 @@
+{
+  "name": "Harmony Salon - Best Bridal Makeup Artist in Ahmedabad",
+  "short_name": "Harmony Salon",
+  "description": "⭐ 4.9/5 Rating | 500+ Happy Clients | Premier bridal makeup, hairstyling & nail art services in Ahmedabad",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#C9A66B",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["beauty", "lifestyle", "business"],
+  "lang": "en-IN",
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": false
+}
+

@@ -95,11 +95,16 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-charcoal mb-1">Visit Us</h3>
-                    <p className="text-charcoal/70">
+                    <a
+                      href="https://www.google.com/maps/dir//Harmony+Salon+Best+Bridal+Makeup+Artist+In+Ahmedabad/@23.0310141,72.4688485"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-charcoal/70 hover:text-gold transition-colors cursor-pointer inline-block"
+                    >
                       F-403, Silver Spring, Rajyash City,<br />
                       near TRP Mall, Ambli – Bopal Road,<br />
                       Bopal, Ahmedabad, Gujarat 380058
-                    </p>
+                    </a>
                   </div>
                 </div>
 

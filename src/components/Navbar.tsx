@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import Container from './Container';
 import Button from './Button';
@@ -45,8 +46,16 @@ export default function Navbar() {
         <Container>
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex items-center space-x-2">
-              <span className="text-2xl font-bold text-charcoal font-heading">
+            <Link href="/" className="flex items-center space-x-3">
+              <Image
+                src="/logo.png"
+                alt="Harmony Salon Logo"
+                width={50}
+                height={50}
+                className="object-contain"
+                priority
+              />
+              <span className="text-xl md:text-2xl font-bold text-charcoal font-heading">
                 Harmony Salon
               </span>
             </Link>

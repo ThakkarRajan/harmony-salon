@@ -17,10 +17,15 @@ export default function JsonLD({ data }: JsonLDProps) {
 export const businessSchema = {
   '@context': 'https://schema.org',
   '@type': 'BeautySalon',
+  '@id': 'https://harmonysalon.com/#organization',
   name: 'Harmony Salon | Best Bridal Makeup Artist in Ahmedabad',
-  image: 'https://harmonysalon.com/og-image.jpg',
-  description: 'Best bridal makeup artist in Ahmedabad. Specializing in HD makeup, airbrush techniques, hairstyling, and pre-wedding grooming. Natural, long-lasting bridal looks with premium products.',
+  alternateName: 'Harmony Salon Bopal',
+  legalName: 'Harmony Salon',
+  image: 'https://harmonysalon.com/logo.png',
+  logo: 'https://harmonysalon.com/logo.png',
+  description: 'Best bridal makeup artist in Ahmedabad with 4.9/5 rating and 500+ happy clients. Specializing in HD makeup, airbrush techniques, hairstyling, nail art, and pre-wedding grooming. Natural, long-lasting bridal looks with premium products. On-site service available.',
   telephone: '+91-96384-37565',
+  email: 'info@harmonysalon.com',
   url: 'https://harmonysalon.com',
   address: {
     '@type': 'PostalAddress',
@@ -35,6 +40,24 @@ export const businessSchema = {
     latitude: 23.0310141,
     longitude: 72.4688485,
   },
+  areaServed: [
+    {
+      '@type': 'City',
+      name: 'Ahmedabad',
+    },
+    {
+      '@type': 'Place',
+      name: 'Bopal',
+    },
+    {
+      '@type': 'Place',
+      name: 'Ambli',
+    },
+    {
+      '@type': 'Place',
+      name: 'Shilaj',
+    },
+  ],
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -44,7 +67,49 @@ export const businessSchema = {
     },
   ],
   priceRange: '₹₹',
-  sameAs: ['https://instagram.com/makeoverby_harmony'],
+  paymentAccepted: 'Cash, UPI, Credit Card, Debit Card',
+  currenciesAccepted: 'INR',
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.9',
+    reviewCount: '500',
+    bestRating: '5',
+    worstRating: '1',
+  },
+  sameAs: [
+    'https://instagram.com/makeoverby_harmony',
+    'https://www.google.com/maps/place/Harmony+Salon',
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Bridal Makeup & Beauty Services',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Bridal Makeup',
+          description: 'Professional bridal makeup with HD and airbrush options',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Hair Styling',
+          description: 'Professional bridal and party hairstyling',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Nail Art',
+          description: 'Bridal nail art and extensions',
+        },
+      },
+    ],
+  },
 };
 
 // Product Schema (for packages)
@@ -87,7 +152,9 @@ export const createReviewSchema = (reviews: { author: string; rating: number; te
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '4.9',
-    reviewCount: reviews.length.toString(),
+    reviewCount: '500',
+    bestRating: '5',
+    worstRating: '1',
   },
   review: reviews.map((review) => ({
     '@type': 'Review',

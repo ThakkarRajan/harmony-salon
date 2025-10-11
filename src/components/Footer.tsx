@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Container from './Container';
 import { FaInstagram, FaWhatsapp, FaPhone, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 
@@ -10,7 +11,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About */}
           <div>
-            <h3 className="text-xl font-bold mb-4 font-heading">Harmony Salon</h3>
+            <div className="flex items-center space-x-3 mb-4">
+              <Image
+                src="/logo.png"
+                alt="Harmony Salon Logo"
+                width={40}
+                height={40}
+                className="object-contain"
+              />
+              <h3 className="text-xl font-bold font-heading">Harmony Salon</h3>
+            </div>
             <p className="text-white/80 mb-4 text-sm">
               Natural, long-lasting bridal makeup with premium products and hygienic processes. 
               Making Ahmedabad brides camera-ready.
@@ -82,9 +92,14 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start space-x-2">
                 <FaMapMarkerAlt className="mt-1 flex-shrink-0 text-gold" />
-                <span className="text-white/80">
+                <a
+                  href="https://www.google.com/maps/dir//Harmony+Salon+Best+Bridal+Makeup+Artist+In+Ahmedabad/@23.0310141,72.4688485"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 hover:text-gold transition-colors cursor-pointer"
+                >
                   F-403, Silver Spring, Rajyash City, near TRP Mall, Ambli – Bopal Road, Bopal, Ahmedabad, Gujarat 380058
-                </span>
+                </a>
               </li>
               <li className="flex items-center space-x-2">
                 <FaClock className="flex-shrink-0 text-gold" />

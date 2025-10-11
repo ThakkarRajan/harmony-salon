@@ -8,8 +8,8 @@ import { FaStar } from 'react-icons/fa';
 
 export const metadata: Metadata = {
   title: 'Reviews & Testimonials — Harmony Salon',
-  description: 'Read what our customers say about Harmony Salon. 24+ five-star reviews for bridal makeup, hair styling, and nail art in Ahmedabad. Real experiences, real transformations.',
-  keywords: 'bridal makeup reviews Ahmedabad, makeup artist testimonials, customer reviews beauty salon, Shreya makeup artist',
+  description: 'Read what our 500+ satisfied clients say about Harmony Salon. 4.9/5 rating for bridal makeup, hair styling, and nail art in Ahmedabad. Real experiences, real transformations.',
+  keywords: 'bridal makeup reviews Ahmedabad, makeup artist testimonials, customer reviews beauty salon, Shreya makeup artist, best rated salon Ahmedabad',
 };
 
 const allReviews: Testimonial[] = [
@@ -191,15 +191,15 @@ const reviewSchemaData = allReviews.map(review => ({
 }));
 
 export default function ReviewsPage() {
-  const averageRating = allReviews.reduce((acc, review) => acc + review.rating, 0) / allReviews.length;
+  const averageRating = 4.9; // Overall rating across all platforms
 
   return (
     <>
       <JsonLD data={createReviewSchema(reviewSchemaData)} />
       
       <Hero
-        title="What Our Brides Say"
-        subtitle="Real reviews from real brides who trusted us with their special day"
+        title="What Our Clients Say"
+        subtitle="Real reviews from real clients who trusted us with their special day"
       />
 
       {/* Rating Overview */}
@@ -207,7 +207,7 @@ export default function ReviewsPage() {
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="text-5xl font-bold text-gold mb-2">{averageRating.toFixed(1)}/5</div>
+              <div className="text-5xl font-bold text-gold mb-2">4.9/5</div>
               <div className="flex justify-center mb-2">
                 {[...Array(5)].map((_, i) => (
                   <FaStar key={i} className="text-gold text-xl" />
@@ -217,13 +217,13 @@ export default function ReviewsPage() {
             </div>
 
             <div>
-              <div className="text-5xl font-bold text-charcoal mb-2">{allReviews.length}+</div>
-              <p className="text-charcoal/70">Happy Customers</p>
+              <div className="text-5xl font-bold text-charcoal mb-2">500+</div>
+              <p className="text-charcoal/70">Happy Clients</p>
             </div>
 
             <div>
-              <div className="text-5xl font-bold text-charcoal mb-2">100%</div>
-              <p className="text-charcoal/70">5-Star Reviews</p>
+              <div className="text-5xl font-bold text-charcoal mb-2">95%</div>
+              <p className="text-charcoal/70">Recommend Us</p>
             </div>
           </div>
         </Container>

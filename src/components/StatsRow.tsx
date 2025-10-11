@@ -5,13 +5,13 @@ import { FaStar, FaUserFriends, FaAward, FaUsers } from 'react-icons/fa';
 const stats = [
   {
     icon: FaStar,
-    value: '5.0/5',
+    value: '4.9/5',
     label: 'Rating',
   },
   {
     icon: FaUserFriends,
-    value: '24+',
-    label: 'Reviews',
+    value: '500+',
+    label: 'Happy Clients',
   },
   {
     icon: FaAward,
