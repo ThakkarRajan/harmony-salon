@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Container from '@/components/Container';
 import Button from '@/components/Button';
-import { FaArrowLeft, FaCheck, FaTimes } from 'react-icons/fa';
+import { FaArrowLeft, FaCheck } from 'react-icons/fa';
 
 export const metadata: Metadata = {
   title: 'HD vs Airbrush Makeup: Which is Right for Your Big Day? — Harmony Salon',
