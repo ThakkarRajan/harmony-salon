@@ -1,0 +1,24 @@
+# Robots.txt for Harmony Salon
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://harmonysalon.com/sitemap.xml
+
+# Disallow admin and api routes
+Disallow: /api/
+Disallow: /admin/
+
+# Allow all pages
+Allow: /
+Allow: /bridal
+Allow: /hair-nails
+Allow: /portfolio
+Allow: /prices
+Allow: /about
+Allow: /reviews
+Allow: /faq
+Allow: /contact
+Allow: /blog
+
