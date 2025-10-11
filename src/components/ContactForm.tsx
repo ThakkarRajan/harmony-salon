@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import Button from './Button';
 
 interface FormData {
@@ -36,31 +37,52 @@ export default function ContactForm() {
     setErrorMessage('');
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+      // EmailJS Configuration
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_simqch2';
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_wcvbfmg';
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'N6ozcGGLHW_J-9dw6';
+
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_whatsapp: formData.whatsapp,
+          event_date: formData.date || 'Not specified',
+          venue: formData.venue || 'Not specified',
+          service: formData.services || 'Not specified',
+          message: formData.message || 'No additional message',
+          reply_to: formData.whatsapp,
         },
-        body: JSON.stringify(formData),
-      });
+        publicKey
+      );
 
-      if (!response.ok) {
-        const error = await response.json();
-        throw new Error(error.message || 'Something went wrong');
+      if (result.status === 200) {
+        setStatus('success');
+        setFormData({
+          name: '',
+          whatsapp: '',
+          date: '',
+          venue: '',
+          services: '',
+          message: '',
+        });
+        
+        // Optional: Also open WhatsApp for instant confirmation
+        setTimeout(() => {
+          window.open(
+            `https://wa.me/919638437565?text=Hi%20Harmony%20Salon!%0A%0AI%20just%20submitted%20a%20booking%20form.%0A%0AName:%20${formData.name}%0AService:%20${formData.services}%0A%0APlease%20confirm%20my%20trial%20booking.`,
+            '_blank'
+          );
+        }, 1000);
+      } else {
+        throw new Error('Failed to send email');
       }
-
-      setStatus('success');
-      setFormData({
-        name: '',
-        whatsapp: '',
-        date: '',
-        venue: '',
-        services: '',
-        message: '',
-      });
     } catch (error) {
       setStatus('error');
-      setErrorMessage(error instanceof Error ? error.message : 'Failed to submit form');
+      setErrorMessage(error instanceof Error ? error.message : 'Failed to submit form. Please try WhatsApp instead.');
+      console.error('EmailJS Error:', error);
     }
   };
 
