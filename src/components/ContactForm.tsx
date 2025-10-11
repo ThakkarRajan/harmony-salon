@@ -39,7 +39,7 @@ export default function ContactForm() {
     try {
       // EmailJS Configuration
       const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_simqch2';
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_wcvbfmg';
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_pki7ghm';
       const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'N6ozcGGLHW_J-9dw6';
 
       // Send email using EmailJS
