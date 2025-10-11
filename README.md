@@ -215,7 +215,7 @@ Copyright © 2024 Harmony Salon. All rights reserved.
 
 For support or inquiries:
 - WhatsApp: +91-98765 43210
-- Email: info@harmonysalon.com
+- Email: shahshreya933@gmail.com
 - Instagram: @makeoverby_harmony
 
 ---

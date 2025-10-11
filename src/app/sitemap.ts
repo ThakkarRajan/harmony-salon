@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://harmonysalon.com';
+  const baseUrl = 'https://harmonysalon.biz';
   const currentDate = new Date();
 
   return [

@@ -4,7 +4,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://harmonysalon.com/sitemap.xml
+Sitemap: https://harmonysalon.biz/sitemap.xml
 
 # Disallow admin and api routes
 Disallow: /api/

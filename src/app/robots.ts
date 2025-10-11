@@ -19,8 +19,8 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    sitemap: 'https://harmonysalon.com/sitemap.xml',
-    host: 'https://harmonysalon.com',
+    sitemap: 'https://harmonysalon.biz/sitemap.xml',
+    host: 'https://harmonysalon.biz',
   };
 }
 

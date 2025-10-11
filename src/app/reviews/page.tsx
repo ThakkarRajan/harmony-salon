@@ -191,8 +191,6 @@ const reviewSchemaData = allReviews.map(review => ({
 }));
 
 export default function ReviewsPage() {
-  const averageRating = 4.9; // Overall rating across all platforms
-
   return (
     <>
       <JsonLD data={createReviewSchema(reviewSchemaData)} />
