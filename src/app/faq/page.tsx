@@ -209,7 +209,7 @@ export default function FAQPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
-              href="https://wa.me/919876543210" 
+              href="https://wa.me/919638437565?text=Hi%2C%20I%27d%20like%20to%20inquire%20about%20a%20...%20" 
               variant="outline" 
               size="lg" 
               className="border-white text-white hover:bg-white hover:text-gold"

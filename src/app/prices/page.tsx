@@ -353,7 +353,7 @@ export default function PricesPage() {
             <Button href="/contact" size="lg">
               Get a Quote
             </Button>
-            <Button href="https://wa.me/919876543210" variant="outline" size="lg">
+            <Button href="https://wa.me/919638437565?text=Hi%2C%20I%27d%20like%20to%20inquire%20about%20a%20...%20" variant="outline" size="lg">
               WhatsApp for Pricing
             </Button>
           </div>
