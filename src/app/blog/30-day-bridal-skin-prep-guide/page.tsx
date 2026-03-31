@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Container from '@/components/Container';
@@ -10,6 +11,13 @@ export const metadata: Metadata = {
   description: 'Complete checklist and dermatologist-approved tips for glowing skin before your wedding. Follow this 30-day timeline for camera-ready results.',
   keywords: 'bridal skin prep, wedding skincare routine, glowing skin, pre-wedding beauty',
 };
+
+const HERO =
+  'https://images.unsplash.com/photo-1616683693707-e796e86d2dc6?w=1400&q=80';
+const INLINE_A =
+  'https://images.unsplash.com/photo-1556228720-195a672e1620?w=1000&q=80';
+const INLINE_B =
+  'https://images.unsplash.com/photo-1596371480338-4e26c0fdd26e?w=1000&q=80';
 
 export default function BlogPost() {
   return (
@@ -36,10 +44,16 @@ export default function BlogPost() {
             </div>
           </header>
 
-          <div 
-            className="w-full h-96 bg-cover bg-center rounded-3xl mb-12 shadow-lg"
-            style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1616683693707-e796e86d2dc6?w=1200)' }}
-          />
+          <div className="relative w-full aspect-[16/10] rounded-3xl overflow-hidden mb-10 shadow-lg">
+            <Image
+              src={HERO}
+              alt="Bridal skincare routine with gentle products for glowing skin"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 720px"
+              priority
+            />
+          </div>
 
           <div className="prose prose-lg max-w-none">
             <p className="text-xl text-charcoal/80 mb-8">
@@ -47,6 +61,37 @@ export default function BlogPost() {
               plays a huge role, it all starts with healthy, glowing skin. Follow this 30-day timeline to 
               ensure your skin is camera-ready.
             </p>
+
+            <div className="grid md:grid-cols-2 gap-6 my-10 not-prose">
+              <figure className="space-y-2">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md">
+                  <Image
+                    src={INLINE_A}
+                    alt="Face care and hydration for pre-wedding skin prep"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 360px"
+                  />
+                </div>
+                <figcaption className="text-sm text-charcoal/60 px-1">
+                  Gentle, consistent care beats last-minute harsh treatments before the wedding.
+                </figcaption>
+              </figure>
+              <figure className="space-y-2">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md">
+                  <Image
+                    src={INLINE_B}
+                    alt="Skincare and beauty products arranged for a bridal routine"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 360px"
+                  />
+                </div>
+                <figcaption className="text-sm text-charcoal/60 px-1">
+                  Stick to products you trust—your trial and wedding day are not for experiments.
+                </figcaption>
+              </figure>
+            </div>
 
             <h2 className="text-3xl font-bold text-charcoal mt-12 mb-4">30 Days Before: Foundation</h2>
             <p className="text-charcoal/80 mb-6">

@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Container from '@/components/Container';
@@ -10,6 +11,13 @@ export const metadata: Metadata = {
   description: 'Complete comparison of HD and airbrush makeup techniques for brides. Understand the differences, benefits, and best scenarios for each.',
   keywords: 'HD makeup, airbrush makeup, bridal makeup techniques, makeup comparison',
 };
+
+const HERO =
+  'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1400&q=80';
+const INLINE_A =
+  'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=1000&q=80';
+const INLINE_B =
+  'https://images.unsplash.com/photo-1522338245189-ebc8ed735165?w=1000&q=80';
 
 export default function BlogPost() {
   return (
@@ -36,10 +44,16 @@ export default function BlogPost() {
             </div>
           </header>
 
-          <div 
-            className="w-full h-96 bg-cover bg-center rounded-3xl mb-12 shadow-lg"
-            style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1200)' }}
-          />
+          <div className="relative w-full aspect-[16/10] rounded-3xl overflow-hidden mb-10 shadow-lg">
+            <Image
+              src={HERO}
+              alt="Professional bridal makeup application for photography and HD cameras"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 720px"
+              priority
+            />
+          </div>
 
           <div className="prose prose-lg max-w-none">
             <p className="text-xl text-charcoal/80 mb-8">
@@ -47,6 +61,37 @@ export default function BlogPost() {
               stunning, camera-ready results, but they work differently and suit different needs. 
               Let's break it down so you can make the best choice for your big day.
             </p>
+
+            <div className="grid md:grid-cols-2 gap-6 my-10 not-prose">
+              <figure className="space-y-2">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md">
+                  <Image
+                    src={INLINE_A}
+                    alt="Detailed eye makeup and traditional bridal beauty look"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 360px"
+                  />
+                </div>
+                <figcaption className="text-sm text-charcoal/60 px-1">
+                  HD and airbrush can both look stunning—the right choice depends on your skin and venue.
+                </figcaption>
+              </figure>
+              <figure className="space-y-2">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md">
+                  <Image
+                    src={INLINE_B}
+                    alt="Makeup brushes and tools used for bridal application"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 360px"
+                  />
+                </div>
+                <figcaption className="text-sm text-charcoal/60 px-1">
+                  Your artist blends technique with products chosen for flash, heat, and wear time.
+                </figcaption>
+              </figure>
+            </div>
 
             <h2 className="text-3xl font-bold text-charcoal mt-12 mb-4">What is HD Makeup?</h2>
             <p className="text-charcoal/80 mb-6">

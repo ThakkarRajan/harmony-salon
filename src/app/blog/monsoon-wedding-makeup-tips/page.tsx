@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Container from '@/components/Container';
@@ -10,6 +11,13 @@ export const metadata: Metadata = {
   description: 'Essential tips and product recommendations for long-lasting bridal makeup during monsoon weddings. Stay flawless despite humidity.',
   keywords: 'monsoon wedding makeup, humidity proof makeup, rainy season bridal, waterproof makeup',
 };
+
+const HERO =
+  'https://images.unsplash.com/photo-1519741497674-611481863552?w=1400&q=80';
+const INLINE_A =
+  'https://images.unsplash.com/photo-1515695702181-67b9f8e9f29d?w=1000&q=80';
+const INLINE_B =
+  'https://images.unsplash.com/photo-1433863448220-43a39325adc4?w=1000&q=80';
 
 export default function BlogPost() {
   return (
@@ -36,10 +44,16 @@ export default function BlogPost() {
             </div>
           </header>
 
-          <div 
-            className="w-full h-96 bg-cover bg-center rounded-3xl mb-12 shadow-lg"
-            style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1519741497674-611481863552?w=1200)' }}
-          />
+          <div className="relative w-full aspect-[16/10] rounded-3xl overflow-hidden mb-10 shadow-lg">
+            <Image
+              src={HERO}
+              alt="Bride with wedding makeup suited for celebration and photography"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 720px"
+              priority
+            />
+          </div>
 
           <div className="prose prose-lg max-w-none">
             <p className="text-xl text-charcoal/80 mb-8">
@@ -47,6 +61,37 @@ export default function BlogPost() {
               humidity can be a bride's worst enemy. Don't worry—with the right techniques and products, 
               your makeup will stay flawless from ceremony to reception, rain or shine.
             </p>
+
+            <div className="grid md:grid-cols-2 gap-6 my-10 not-prose">
+              <figure className="space-y-2">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md">
+                  <Image
+                    src={INLINE_A}
+                    alt="Rainy monsoon weather and outdoor atmosphere"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 360px"
+                  />
+                </div>
+                <figcaption className="text-sm text-charcoal/60 px-1">
+                  Humidity-proof primers and layering help makeup survive monsoon weddings.
+                </figcaption>
+              </figure>
+              <figure className="space-y-2">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md">
+                  <Image
+                    src={INLINE_B}
+                    alt="Umbrella in rainy weather symbolising monsoon season"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 360px"
+                  />
+                </div>
+                <figcaption className="text-sm text-charcoal/60 px-1">
+                  Waterproof eyes and strategic setting powder are your best friends.
+                </figcaption>
+              </figure>
+            </div>
 
             <h2 className="text-3xl font-bold text-charcoal mt-12 mb-4">The Monsoon Makeup Challenge</h2>
             <p className="text-charcoal/80 mb-6">
