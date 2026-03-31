@@ -2,63 +2,24 @@ import React from 'react';
 import { Metadata } from 'next';
 import Hero from '@/components/Hero';
 import Container from '@/components/Container';
-import PricingCards, { PricingTier } from '@/components/PricingCards';
+import PricingCards from '@/components/PricingCards';
 import Button from '@/components/Button';
+import JsonLD, { bridalStudioPriceListSchema } from '@/components/JsonLD';
+import { bridalAndSidersPackages } from '@/data/bridalPricing';
 
 export const metadata: Metadata = {
-  title: 'Pricing & Packages — Harmony Salon Ahmedabad',
-  description: 'Transparent pricing for bridal makeup, party makeup, hairstyling, and nail art services. Starting packages from ₹15,000. Book your trial today.',
-  keywords: 'bridal makeup price Ahmedabad, makeup artist cost, beauty salon pricing, bridal packages',
+  title: 'Bridal Makeup Price List — HD Party, Engagement & Packages',
+  description:
+    'Bridal package price list (studio Ahmedabad): Marriage Day ₹15,000, bride-side ₹7,000, siders ₹2,500–₹4,500. HD party makeup from ₹6,000, engagement & bridal hairstyle prices. Makeup artist fees at Harmony Salon Bopal.',
+  keywords:
+    'bridal makeup price list, bridal package price, hd party makeup price, hd makeup price, engagement makeup price, makeup artist fees, bridal hairstyle price, harmony salon ahmedabad',
+  alternates: { canonical: 'https://harmonysalon.biz/prices' },
 };
-
-const bridalPackages: PricingTier[] = [
-  {
-    name: 'Silver',
-    price: 'From ₹15,000',
-    description: 'Engagement & Pre-wedding',
-    features: [
-      'HD makeup',
-      'Basic hairstyle',
-      'Standard lashes',
-      'Complimentary trial',
-      'Touch-up kit',
-      '8-10 hours wear',
-    ],
-  },
-  {
-    name: 'Gold',
-    price: 'From ₹28,000',
-    description: 'Bridal Day Special',
-    featured: true,
-    features: [
-      'HD or Airbrush',
-      '2 hairstyle changes',
-      'Premium lashes',
-      'Trial makeup',
-      'Deluxe touch-up kit',
-      'Assistant artist',
-      '12-14 hours wear',
-    ],
-  },
-  {
-    name: 'Premium',
-    price: 'Custom Quote',
-    description: 'Complete Bridal Package',
-    features: [
-      'Airbrush (2 sessions)',
-      'Multiple hairstyles',
-      'Luxury lashes',
-      '2 trials',
-      'On-site team',
-      'Accessories styling',
-      'All-day coverage',
-    ],
-  },
-];
 
 export default function PricesPage() {
   return (
     <>
+      <JsonLD data={bridalStudioPriceListSchema} />
       <Hero
         title="Transparent Pricing"
         subtitle="No hidden costs. No surprises. Just beautiful, affordable bridal makeup."
@@ -72,12 +33,14 @@ export default function PricesPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-4">
               Bridal Makeup Packages
             </h2>
-            <p className="text-lg text-charcoal/70">
-              All packages include a complimentary trial session
+            <p className="text-lg text-charcoal/70 max-w-2xl mx-auto">
+              Bridal and siders rates below are studio charges — your quick reference for bridal package price list,
+              HD party makeup price, engagement makeup, and makeup artist fees in Ahmedabad. All bridal packages include
+              a complimentary trial session.
             </p>
           </div>
 
-          <PricingCards tiers={bridalPackages} />
+          <PricingCards tiers={bridalAndSidersPackages} />
         </Container>
       </section>
 
@@ -206,25 +169,25 @@ export default function PricesPage() {
               </div>
             </div>
 
-            {/* Bridal Party */}
+            {/* Siders (studio) — same tiers as bridal packages grid */}
             <div className="bg-white rounded-2xl p-6 shadow-lg">
-              <h3 className="text-xl font-bold text-charcoal mb-4">Bridal Party</h3>
+              <h3 className="text-xl font-bold text-charcoal mb-4">Siders Package (Studio)</h3>
               <div className="space-y-3 text-sm">
                 <div className="flex justify-between border-b border-charcoal/10 pb-2">
-                  <span className="text-charcoal/70">Mother/Family</span>
-                  <span className="font-bold text-charcoal">₹5,000+</span>
+                  <span className="text-charcoal/70">3D makeup & hairstyle</span>
+                  <span className="font-bold text-charcoal">₹2,500</span>
                 </div>
                 <div className="flex justify-between border-b border-charcoal/10 pb-2">
-                  <span className="text-charcoal/70">Bridesmaids (each)</span>
-                  <span className="font-bold text-charcoal">₹4,000+</span>
+                  <span className="text-charcoal/70">HD makeup & hairstyle</span>
+                  <span className="font-bold text-charcoal">₹3,500</span>
                 </div>
                 <div className="flex justify-between border-b border-charcoal/10 pb-2">
-                  <span className="text-charcoal/70">Guest Makeup</span>
-                  <span className="font-bold text-charcoal">₹3,500+</span>
+                  <span className="text-charcoal/70">Full package (flowers, lenses, lashes & extensions)</span>
+                  <span className="font-bold text-charcoal">₹4,500</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-charcoal/70">Group Discount</span>
-                  <span className="font-bold text-charcoal">Available</span>
+                  <span className="text-charcoal/70">Mother / family / group</span>
+                  <span className="font-bold text-charcoal">Ask us</span>
                 </div>
               </div>
             </div>

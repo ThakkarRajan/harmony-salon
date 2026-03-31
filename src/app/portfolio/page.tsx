@@ -6,36 +6,36 @@ import GalleryGrid, { GalleryImage } from '@/components/GalleryGrid';
 
 export const metadata: Metadata = {
   title: 'Portfolio — Harmony Salon Makeup Gallery',
-  description: 'View our bridal makeup portfolio. Before/after transformations, real brides, and stunning makeup looks by Harmony Salon.',
-  keywords: 'bridal makeup portfolio, makeup gallery, before after makeup, bridal transformation',
+  description: 'View our Indian bridal makeup portfolio — lehenga, saree, and celebration looks. Real brides and stunning makeup by Harmony Salon.',
+  keywords: 'Indian bridal makeup portfolio, Indian wedding makeup, lehenga bridal, sangeet makeup, makeup gallery',
 };
 
 const portfolioImages: GalleryImage[] = [
-  // Bridal
-  { src: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=600', alt: 'Classic Bridal Look', category: 'Bridal' },
-  { src: 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=600', alt: 'Traditional Bridal Makeup', category: 'Bridal' },
-  { src: 'https://images.unsplash.com/photo-1525268771113-32d9e9021a97?w=600', alt: 'Modern Bridal Glam', category: 'Bridal' },
-  { src: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600', alt: 'Airbrush Bridal Look', category: 'Bridal' },
-  { src: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600', alt: 'HD Bridal Makeup', category: 'Bridal' },
-  { src: 'https://images.unsplash.com/photo-1596704017254-9b121068ec31?w=600', alt: 'Elegant Bridal Style', category: 'Bridal' },
-  
-  // Sangeet
-  { src: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600', alt: 'Colorful Sangeet Look', category: 'Sangeet' },
-  { src: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=600', alt: 'Vibrant Sangeet Makeup', category: 'Sangeet' },
-  { src: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600', alt: 'Glam Sangeet Style', category: 'Sangeet' },
-  { src: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600', alt: 'Bold Sangeet Look', category: 'Sangeet' },
-  
-  // Reception
-  { src: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600', alt: 'Evening Reception Glam', category: 'Reception' },
-  { src: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600', alt: 'Elegant Reception Look', category: 'Reception' },
-  { src: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=600', alt: 'Sophisticated Reception', category: 'Reception' },
-  { src: 'https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?w=600', alt: 'Classic Reception Style', category: 'Reception' },
-  
-  // Party
-  { src: 'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=600', alt: 'Party Glam Look', category: 'Party' },
-  { src: 'https://images.unsplash.com/photo-1496440737103-cd596325d314?w=600', alt: 'Cocktail Party Makeup', category: 'Party' },
-  { src: 'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=600', alt: 'Modern Party Style', category: 'Party' },
-  { src: 'https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?w=600', alt: 'Glam Party Look', category: 'Party' },
+  // Bridal — Indian wedding & traditional bridal makeup (Unsplash)
+  { src: 'https://images.unsplash.com/photo-1742891602044-7fdc0a9839ad?w=600', alt: 'Indian bride in traditional bridal lehenga and jewellery', category: 'Bridal' },
+  { src: 'https://images.unsplash.com/photo-1742891602815-fa2a195f0ab3?w=600', alt: 'Traditional Indian bridal makeup and attire', category: 'Bridal' },
+  { src: 'https://images.unsplash.com/photo-1742891602747-383fc69b4e39?w=600', alt: 'Indian bride with classic bridal styling', category: 'Bridal' },
+  { src: 'https://images.unsplash.com/photo-1742891601435-39de27531cc7?w=600', alt: 'Indian bride adorned in traditional wedding attire', category: 'Bridal' },
+  { src: 'https://images.unsplash.com/photo-1770747874505-67d0a43379d5?w=600', alt: 'Bride in traditional Indian wedding makeup and jewellery', category: 'Bridal' },
+  { src: 'https://images.unsplash.com/photo-1762708597196-5b81b1649b93?w=600', alt: 'Indian bride in ornate red and gold lehenga', category: 'Bridal' },
+
+  // Sangeet — festive colour, pre-wedding celebration looks
+  { src: 'https://images.unsplash.com/photo-1756483517695-d0aa21ee1ea1?w=600', alt: 'Woman in ornate Indian lehenga and jewellery', category: 'Sangeet' },
+  { src: 'https://images.unsplash.com/photo-1771929837105-122c2aab8a04?w=600', alt: 'Haldi ceremony — yellow saree and celebration glow', category: 'Sangeet' },
+  { src: 'https://images.unsplash.com/photo-1600685890506-593fdf55949b?w=600', alt: 'Festive Indian bridal crown and gold styling', category: 'Sangeet' },
+  { src: 'https://images.unsplash.com/photo-1587271315307-eaebc181c749?w=600', alt: 'Vibrant red and gold festive Indian wedding look', category: 'Sangeet' },
+
+  // Reception — elegant evening Indian reception styling
+  { src: 'https://images.unsplash.com/photo-1759906760638-eeffcb471e53?w=600', alt: 'Indian bride in red lehenga and dupatta veil', category: 'Reception' },
+  { src: 'https://images.unsplash.com/photo-1757598147902-709659de259f?w=600', alt: 'Traditional Indian bridal attire and jewellery', category: 'Reception' },
+  { src: 'https://images.unsplash.com/photo-1594140701076-3400bf982497?w=600', alt: 'Indian bride in red and gold wedding saree', category: 'Reception' },
+  { src: 'https://images.unsplash.com/photo-1769500808343-62495040fd1b?w=600', alt: 'South Asian bride in red and gold wedding saree', category: 'Reception' },
+
+  // Party — cocktail and celebration ethnic glam
+  { src: 'https://images.unsplash.com/photo-1743090834072-4f70339bc917?w=600', alt: 'Woman in beautiful traditional Indian attire', category: 'Party' },
+  { src: 'https://images.unsplash.com/photo-1617633150878-7df1d12a9a57?w=600', alt: 'Indian wedding guest in red and gold saree', category: 'Party' },
+  { src: 'https://images.unsplash.com/photo-1610173827043-9db50e0d8ef9?w=600', alt: 'Elegant red and gold Indian wedding ensemble', category: 'Party' },
+  { src: 'https://images.unsplash.com/photo-1619516388835-2b60acc4049e?w=600', alt: 'Indian woman in saree — outdoor celebration portrait', category: 'Party' },
 ];
 
 const categories = ['Bridal', 'Sangeet', 'Reception', 'Party'];
@@ -100,10 +100,10 @@ export default function PortfolioPage() {
             Follow Us on Instagram
           </h2>
           <p className="text-lg text-charcoal/70 mb-8">
-            @makeoverby_harmony for daily inspiration, behind-the-scenes, and real bride stories
+            @harmony__salon for daily inspiration, behind-the-scenes, and real bride stories
           </p>
           <a
-            href="https://instagram.com/makeoverby_harmony"
+            href="https://instagram.com/harmony__salon"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full hover:shadow-xl transition-all duration-300"

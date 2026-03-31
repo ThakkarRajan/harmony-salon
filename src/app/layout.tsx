@@ -10,10 +10,12 @@ export const metadata: Metadata = {
     google: 'eDwFE8E5W6fPeZ6xhv-DQ6wt3_mcVGpxBsD97Qnod_g',
   },
   title: {
-    default: "Harmony Salon | Best Bridal Makeup Artist in Ahmedabad - 4.9★ Rated",
-    template: "%s | Harmony Salon Ahmedabad"
+    default:
+      "Harmony Salon Ahmedabad | Bridal Package Prices & HD Makeup",
+    template: "%s | Harmony Salon Ahmedabad",
   },
-  description: "⭐ 4.9/5 Rating | 500+ Happy Clients | Best bridal makeup artist in Ahmedabad. Specializing in HD makeup, airbrush techniques, hairstyling, nail art. Premium products, hygienic process, on-site service. Book your trial at Bopal, Ahmedabad. Available for weddings, engagement, mehndi, sangeet, cocktail & reception.",
+  description:
+    "Studio bridal package price list: Marriage Day from ₹15,000, bride-side from ₹7,000, siders from ₹2,500. HD party & engagement makeup, 3D bridal makeup, hairstyling. Makeup artist in Bopal (near TRP Mall) — 4.9★, trial included. On-site Ahmedabad.",
   keywords: [
     // Primary Bridal Keywords
     "bridal makeup artist Ahmedabad",
@@ -85,6 +87,14 @@ export const metadata: Metadata = {
     // Price-Related
     "affordable bridal makeup Ahmedabad",
     "bridal makeup price Ahmedabad",
+    "bridal package price list",
+    "hd party makeup price",
+    "hd makeup price",
+    "makeup artist fees",
+    "bridal makeup cost",
+    "engagement makeup price",
+    "harmony salon ahmedabad",
+    "harmony salon near me",
     "best price makeup artist",
     "budget bridal makeup",
     "bridal makeup packages Ahmedabad",
@@ -176,8 +186,9 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://harmonysalon.biz",
     siteName: "Harmony Salon",
-    title: "Harmony Salon | Best Bridal Makeup Artist in Ahmedabad - 4.9★ Rated",
-    description: "⭐ 4.9/5 Rating with 500+ Happy Clients. Premier bridal makeup artist in Ahmedabad offering HD & airbrush makeup, hairstyling, nail art. Book your trial today!",
+    title: "Harmony Salon Ahmedabad | Bridal Packages & HD Makeup Prices",
+    description:
+      "Bridal package prices from ₹7k–₹15k (studio), HD party makeup, engagement & siders packages. 4.9★ makeup artist Bopal, Ahmedabad — book trial.",
     images: [
       {
         url: "/logo.png",
@@ -190,10 +201,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Harmony Salon | Best Bridal Makeup Artist in Ahmedabad",
-    description: "⭐ 4.9/5 Rating | 500+ Happy Clients | Premium bridal makeup services in Ahmedabad. Book your trial!",
+    title: "Harmony Salon Ahmedabad | Bridal Makeup Price List & Packages",
+    description:
+      "Bridal & HD party makeup prices, packages & trial at Harmony Salon Bopal, Ahmedabad. WhatsApp to book.",
     images: ["/logo.png"],
-    creator: "@makeoverby_harmony",
+    creator: "@harmony__salon",
   },
   robots: {
     index: true,
@@ -207,9 +219,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
-  alternates: {
-    canonical: "https://harmonysalon.biz",
   },
   category: "Beauty & Personal Care",
   classification: "Beauty Salon, Bridal Makeup, Wedding Services",

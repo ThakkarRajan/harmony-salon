@@ -77,12 +77,12 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold text-charcoal mb-1">Instagram</h3>
                     <a 
-                      href="https://instagram.com/makeoverby_harmony" 
+                      href="https://instagram.com/harmony__salon" 
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-charcoal/70 hover:text-pink-500 transition-colors"
                     >
-                      @makeoverby_harmony
+                      @harmony__salon
                     </a>
                     <p className="text-sm text-charcoal/50">DM us for quick questions</p>
                   </div>
@@ -229,14 +229,14 @@ export default function ContactPage() {
             </a>
 
             <a
-              href="https://instagram.com/makeoverby_harmony"
+              href="https://instagram.com/harmony__salon"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 group"
             >
               <FaInstagram className="text-5xl mx-auto mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="font-bold text-xl mb-2">Instagram DM</h3>
-              <p className="text-white/90 text-sm">@makeoverby_harmony</p>
+              <p className="text-white/90 text-sm">@harmony__salon</p>
             </a>
           </div>
         </Container>

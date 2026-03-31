@@ -26,13 +26,13 @@ export default function Footer() {
               Making Ahmedabad brides camera-ready.
             </p>
             <a
-              href="https://instagram.com/makeoverby_harmony"
+              href="https://instagram.com/harmony__salon"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-2 text-gold hover:text-gold/80 transition-colors"
             >
               <FaInstagram size={20} />
-              <span>@makeoverby_harmony</span>
+              <span>@harmony__salon</span>
             </a>
           </div>
 
@@ -68,6 +68,11 @@ export default function Footer() {
               <li>
                 <Link href="/faq" className="text-white/80 hover:text-gold transition-colors">
                   FAQ
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms" className="text-white/80 hover:text-gold transition-colors">
+                  Terms & Conditions
                 </Link>
               </li>
             </ul>
@@ -129,8 +134,19 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/20 mt-8 pt-8 text-center text-sm text-white/60">
-          <p>&copy; {new Date().getFullYear()} Harmony Salon. All rights reserved.</p>
+        <div className="border-t border-white/20 mt-8 pt-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 text-sm text-white/60 text-center">
+            <p>&copy; {new Date().getFullYear()} Harmony Salon. All rights reserved.</p>
+            <span className="hidden sm:inline text-white/30 select-none" aria-hidden>
+              |
+            </span>
+            <Link
+              href="/terms"
+              className="text-white/70 hover:text-gold transition-colors underline-offset-2 hover:underline shrink-0"
+            >
+              Terms & Conditions
+            </Link>
+          </div>
         </div>
       </Container>
     </footer>

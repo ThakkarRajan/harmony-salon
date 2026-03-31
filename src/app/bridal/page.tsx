@@ -2,82 +2,54 @@ import React from 'react';
 import { Metadata } from 'next';
 import Hero from '@/components/Hero';
 import Container from '@/components/Container';
-import PricingCards, { PricingTier } from '@/components/PricingCards';
+import PricingCards from '@/components/PricingCards';
 import JsonLD, { createProductSchema } from '@/components/JsonLD';
 import Button from '@/components/Button';
+import { bridalAndSidersPackages } from '@/data/bridalPricing';
 
 export const metadata: Metadata = {
-  title: 'Bridal Makeup Packages — Harmony Salon Ahmedabad',
-  description: 'Professional bridal makeup services in Ahmedabad. HD & airbrush options, trial makeup, on-site team. Silver, Gold, and Premium packages available.',
-  keywords: 'bridal makeup Ahmedabad, wedding makeup artist, bridal makeup packages, HD makeup, airbrush makeup',
+  title: 'Bridal Packages — Indian Bridal, 3D/HD & Pre-Bridal Trial',
+  description:
+    'Bridal makeup packages in Ahmedabad: Marriage Day HD, bride-side functions, siders 3D/HD, Indian bridal looks. Studio rates from ₹7,000–₹15,000; complimentary trial. Best bridal makeup artist Bopal — Harmony Salon.',
+  keywords:
+    'bridal package, bridal makeup packages, indian bridal packages, 3d bridal makeup price, hd bridal makeup, pre bridal packages, bridal makeup price in ahmedabad, best salon for bridal makeup in ahmedabad',
+  alternates: { canonical: 'https://harmonysalon.biz/bridal' },
 };
-
-const packages: PricingTier[] = [
-  {
-    name: 'Silver',
-    price: 'From ₹15,000',
-    description: 'Perfect for engagement & pre-wedding events',
-    features: [
-      'HD makeup application',
-      'Basic hairstyle (updo or curls)',
-      'Standard false lashes',
-      'Makeup lasts 8-10 hours',
-      'Complimentary trial makeup',
-      'Touch-up kit provided',
-    ],
-  },
-  {
-    name: 'Gold',
-    price: 'From ₹28,000',
-    description: 'Our most popular bridal package',
-    featured: true,
-    features: [
-      'HD or Airbrush makeup',
-      '2 hairstyle changes',
-      'Premium false lashes',
-      'Makeup lasts 12-14 hours',
-      'Complimentary trial makeup',
-      'Deluxe touch-up kit',
-      'Hair accessories included',
-      'One assistant for support',
-    ],
-  },
-  {
-    name: 'Premium',
-    price: 'Custom Quote',
-    description: 'Ultimate luxury for bride + reception',
-    features: [
-      'Airbrush makeup (2 sessions)',
-      'Multiple hairstyle changes',
-      'Luxury false lashes & extensions',
-      'All-day makeup coverage',
-      '2 complimentary trials',
-      'Premium touch-up kit',
-      'Jewelry & accessories styling',
-      'Dedicated assistant artist',
-      'On-site team at venue',
-    ],
-  },
-];
 
 const products = [
   createProductSchema(
-    'Silver Bridal Package',
-    'HD makeup with basic hairstyle for engagement and pre-wedding events',
+    'Marriage Day Bridal Package',
+    'HD makeup, hairstyling and draping — studio package',
     '15000'
   ),
   createProductSchema(
-    'Gold Bridal Package',
-    'HD or Airbrush makeup with 2 hairstyle changes - most popular package',
-    '28000'
+    'Bride Side Function Bridal Package',
+    'HD makeup and hairstyling for bride-side functions — studio package',
+    '7000'
+  ),
+  createProductSchema(
+    'Siders 3D Makeup & Hairstyle',
+    '3D makeup and hairstyle for siders — studio charges',
+    '2500'
+  ),
+  createProductSchema(
+    'Siders HD Makeup & Hairstyle',
+    'HD makeup and hairstyle for siders — studio charges',
+    '3500'
+  ),
+  createProductSchema(
+    'Siders Full Package',
+    'HD makeup and hairstyle with real flowers, lenses, false lashes and hair extensions — studio',
+    '4500'
   ),
 ];
 
 export default function BridalPage() {
   return (
     <>
-      <JsonLD data={products[0]} />
-      <JsonLD data={products[1]} />
+      {products.map((schema, i) => (
+        <JsonLD key={i} data={schema} />
+      ))}
       
       <Hero
         title="Bridal Makeup Packages"
@@ -92,11 +64,12 @@ export default function BridalPage() {
               Choose Your Perfect Package
             </h2>
             <p className="text-lg text-charcoal/70 max-w-2xl mx-auto">
-              Every package includes a complimentary trial so you can perfect your look before the big day
+              Bridal packages include a complimentary trial so you can perfect your look before the big day.
+              Rates below are studio charges — make your bridal day even more special with us.
             </p>
           </div>
 
-          <PricingCards tiers={packages} />
+          <PricingCards tiers={bridalAndSidersPackages} />
         </Container>
       </section>
 

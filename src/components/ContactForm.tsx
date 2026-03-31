@@ -1,10 +1,39 @@
 'use client';
 
-import React, { useState } from 'react';
-import emailjs from '@emailjs/browser';
+import React, { useRef, useState } from 'react';
 import Button from './Button';
 
-interface FormData {
+const WHATSAPP_E164 =
+  (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '919638437565').replace(/\D/g, '');
+
+function buildTrialBookingMessage(data: TrialBookingFields): string {
+  const lines = [
+    'Hi Harmony Salon!',
+    '',
+    "I'd like to book a trial. Details:",
+    '',
+    `Name: ${data.name}`,
+    `My WhatsApp: ${data.whatsapp}`,
+    `Event date: ${data.date || 'Not specified'}`,
+    `Venue: ${data.venue || 'Not specified'}`,
+    `Service: ${data.services || 'Not specified'}`,
+  ];
+  if (data.message.trim()) {
+    lines.push('', `Message: ${data.message.trim()}`);
+  }
+  return lines.join('\n');
+}
+
+function openWhatsAppWithTrialDetails(data: TrialBookingFields): void {
+  const text = encodeURIComponent(buildTrialBookingMessage(data));
+  window.open(
+    `https://wa.me/${WHATSAPP_E164}?text=${text}`,
+    '_blank',
+    'noopener,noreferrer'
+  );
+}
+
+interface TrialBookingFields {
   name: string;
   whatsapp: string;
   date: string;
@@ -14,7 +43,8 @@ interface FormData {
 }
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState<FormData>({
+  const formRef = useRef<HTMLFormElement>(null);
+  const [formData, setFormData] = useState<TrialBookingFields>({
     name: '',
     whatsapp: '',
     date: '',
@@ -22,8 +52,6 @@ export default function ContactForm() {
     services: '',
     message: '',
   });
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -31,63 +59,17 @@ export default function ContactForm() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('loading');
-    setErrorMessage('');
-
-    try {
-      // EmailJS Configuration
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_simqch2';
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_pki7ghm';
-      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'N6ozcGGLHW_J-9dw6';
-
-      // Send email using EmailJS
-      const result = await emailjs.send(
-        serviceId,
-        templateId,
-        {
-          from_name: formData.name,
-          from_whatsapp: formData.whatsapp,
-          event_date: formData.date || 'Not specified',
-          venue: formData.venue || 'Not specified',
-          service: formData.services || 'Not specified',
-          message: formData.message || 'No additional message',
-          reply_to: formData.whatsapp,
-        },
-        publicKey
-      );
-
-      if (result.status === 200) {
-        setStatus('success');
-        setFormData({
-          name: '',
-          whatsapp: '',
-          date: '',
-          venue: '',
-          services: '',
-          message: '',
-        });
-        
-        // Optional: Also open WhatsApp for instant confirmation
-        setTimeout(() => {
-          window.open(
-            `https://wa.me/919638437565?text=Hi%20Harmony%20Salon!%0A%0AI%20just%20submitted%20a%20booking%20form.%0A%0AName:%20${formData.name}%0AService:%20${formData.services}%0A%0APlease%20confirm%20my%20trial%20booking.`,
-            '_blank'
-          );
-        }, 1000);
-      } else {
-        throw new Error('Failed to send email');
-      }
-    } catch (error) {
-      setStatus('error');
-      setErrorMessage(error instanceof Error ? error.message : 'Failed to submit form. Please try WhatsApp instead.');
-      console.error('EmailJS Error:', error);
-    }
+  const handleSendViaWhatsApp = () => {
+    if (!formRef.current?.reportValidity()) return;
+    openWhatsAppWithTrialDetails(formData);
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form
+      ref={formRef}
+      onSubmit={(e) => e.preventDefault()}
+      className="space-y-6"
+    >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-charcoal mb-2">
@@ -189,27 +171,20 @@ export default function ContactForm() {
         />
       </div>
 
-      {status === 'success' && (
-        <div className="bg-green-50 border border-green-200 text-green-800 rounded-lg p-4">
-          Thank you! We&apos;ll get back to you shortly via WhatsApp.
-        </div>
-      )}
-
-      {status === 'error' && (
-        <div className="bg-red-50 border border-red-200 text-red-800 rounded-lg p-4">
-          {errorMessage}
-        </div>
-      )}
-
-      <Button
-        type="submit"
-        disabled={status === 'loading'}
-        className="w-full sm:w-auto"
-        size="lg"
-      >
-        {status === 'loading' ? 'Sending...' : 'Send Message'}
-      </Button>
+      <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
+        <Button
+          type="button"
+          variant="primary"
+          onClick={handleSendViaWhatsApp}
+          className="w-full sm:w-auto"
+          size="lg"
+        >
+          Send via WhatsApp
+        </Button>
+      </div>
+      <p className="text-sm text-charcoal/60">
+        Opens WhatsApp on your phone or desktop with this message ready to send.
+      </p>
     </form>
   );
 }
-

@@ -19,11 +19,22 @@ export const businessSchema = {
   '@type': 'BeautySalon',
   '@id': 'https://harmonysalon.biz/#organization',
   name: 'Harmony Salon | Best Bridal Makeup Artist in Ahmedabad',
-  alternateName: 'Harmony Salon Bopal',
+  alternateName: ['Harmony Salon Bopal', 'Harmony Salon Ahmedabad'],
   legalName: 'Harmony Salon',
   image: 'https://harmonysalon.biz/logo.png',
   logo: 'https://harmonysalon.biz/logo.png',
-  description: 'Best bridal makeup artist in Ahmedabad with 4.9/5 rating and 500+ happy clients. Specializing in HD makeup, airbrush techniques, hairstyling, nail art, and pre-wedding grooming. Natural, long-lasting bridal looks with premium products. On-site service available.',
+  description:
+    'Bridal makeup artist in Ahmedabad (Bopal, near TRP Mall) with 4.9/5 rating. Bridal packages, HD & 3D bridal makeup, engagement & party makeup, hairstyling, nail art. Studio bridal price list from ₹7,000–₹15,000; siders from ₹2,500. On-site service across Ahmedabad.',
+  knowsAbout: [
+    'Bridal makeup Ahmedabad',
+    'Bridal package price list',
+    'HD bridal makeup',
+    'HD party makeup',
+    'Engagement makeup',
+    '3D bridal makeup',
+    'Makeup artist fees',
+    'Indian bridal packages',
+  ],
   telephone: '+91-96384-37565',
   email: 'shahshreya933@gmail.com',
   url: 'https://harmonysalon.biz',
@@ -77,7 +88,7 @@ export const businessSchema = {
     worstRating: '1',
   },
   sameAs: [
-    'https://instagram.com/makeoverby_harmony',
+    'https://instagram.com/harmony__salon',
     'https://www.google.com/maps/place/Harmony+Salon',
   ],
   hasOfferCatalog: {
@@ -110,6 +121,193 @@ export const businessSchema = {
       },
     ],
   },
+};
+
+/** WebSite + publisher link; use on homepage with businessSchema */
+export const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': 'https://harmonysalon.biz/#website',
+  url: 'https://harmonysalon.biz',
+  name: 'Harmony Salon Ahmedabad',
+  alternateName: 'Harmony Salon — Bridal Makeup Bopal',
+  inLanguage: 'en-IN',
+  publisher: { '@id': 'https://harmonysalon.biz/#organization' },
+};
+
+/** ItemList of studio services & starting prices for /prices */
+export const bridalStudioPriceListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Harmony Salon — bridal & party makeup price list (studio, Ahmedabad)',
+  description:
+    'Indicative studio rates for bridal packages, siders, and party makeup at Harmony Salon Bopal, Ahmedabad. On-site and custom quotes may differ.',
+  numberOfItems: 9,
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      item: {
+        '@type': 'Service',
+        name: 'Marriage Day bridal package',
+        description: 'HD makeup, hairstyling & draping — studio',
+        provider: { '@id': 'https://harmonysalon.biz/#organization' },
+        areaServed: { '@type': 'City', name: 'Ahmedabad' },
+        offers: {
+          '@type': 'Offer',
+          priceCurrency: 'INR',
+          price: '15000',
+          availability: 'https://schema.org/InStock',
+          url: 'https://harmonysalon.biz/prices',
+        },
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      item: {
+        '@type': 'Service',
+        name: 'Bride-side function bridal package',
+        description: 'HD makeup & hairstyling — studio',
+        provider: { '@id': 'https://harmonysalon.biz/#organization' },
+        areaServed: { '@type': 'City', name: 'Ahmedabad' },
+        offers: {
+          '@type': 'Offer',
+          priceCurrency: 'INR',
+          price: '7000',
+          availability: 'https://schema.org/InStock',
+          url: 'https://harmonysalon.biz/prices',
+        },
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      item: {
+        '@type': 'Service',
+        name: 'Siders — 3D makeup & hairstyle',
+        description: 'Studio package for family / bridesmaids',
+        provider: { '@id': 'https://harmonysalon.biz/#organization' },
+        areaServed: { '@type': 'City', name: 'Ahmedabad' },
+        offers: {
+          '@type': 'Offer',
+          priceCurrency: 'INR',
+          price: '2500',
+          availability: 'https://schema.org/InStock',
+          url: 'https://harmonysalon.biz/prices',
+        },
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 4,
+      item: {
+        '@type': 'Service',
+        name: 'Siders — HD makeup & hairstyle',
+        description: 'Studio package',
+        provider: { '@id': 'https://harmonysalon.biz/#organization' },
+        areaServed: { '@type': 'City', name: 'Ahmedabad' },
+        offers: {
+          '@type': 'Offer',
+          priceCurrency: 'INR',
+          price: '3500',
+          availability: 'https://schema.org/InStock',
+          url: 'https://harmonysalon.biz/prices',
+        },
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 5,
+      item: {
+        '@type': 'Service',
+        name: 'Siders — full package',
+        description: 'HD makeup & hair with flowers, lenses, lashes & extensions — studio',
+        provider: { '@id': 'https://harmonysalon.biz/#organization' },
+        areaServed: { '@type': 'City', name: 'Ahmedabad' },
+        offers: {
+          '@type': 'Offer',
+          priceCurrency: 'INR',
+          price: '4500',
+          availability: 'https://schema.org/InStock',
+          url: 'https://harmonysalon.biz/prices',
+        },
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 6,
+      item: {
+        '@type': 'Service',
+        name: 'HD party makeup',
+        description: 'Starting from — studio; final quote by look & event',
+        provider: { '@id': 'https://harmonysalon.biz/#organization' },
+        areaServed: { '@type': 'City', name: 'Ahmedabad' },
+        offers: {
+          '@type': 'Offer',
+          priceCurrency: 'INR',
+          price: '6000',
+          availability: 'https://schema.org/InStock',
+          url: 'https://harmonysalon.biz/prices',
+        },
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 7,
+      item: {
+        '@type': 'Service',
+        name: 'Basic party makeup',
+        description: 'Starting from — studio',
+        provider: { '@id': 'https://harmonysalon.biz/#organization' },
+        areaServed: { '@type': 'City', name: 'Ahmedabad' },
+        offers: {
+          '@type': 'Offer',
+          priceCurrency: 'INR',
+          price: '4000',
+          availability: 'https://schema.org/InStock',
+          url: 'https://harmonysalon.biz/prices',
+        },
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 8,
+      item: {
+        '@type': 'Service',
+        name: 'Bridal hairstyle',
+        description: 'Starting from — studio',
+        provider: { '@id': 'https://harmonysalon.biz/#organization' },
+        areaServed: { '@type': 'City', name: 'Ahmedabad' },
+        offers: {
+          '@type': 'Offer',
+          priceCurrency: 'INR',
+          price: '5000',
+          availability: 'https://schema.org/InStock',
+          url: 'https://harmonysalon.biz/prices',
+        },
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 9,
+      item: {
+        '@type': 'Service',
+        name: 'Makeup & hairstyle combo (party)',
+        description: 'Quoted per event — contact for engagement / sangeet packages',
+        provider: { '@id': 'https://harmonysalon.biz/#organization' },
+        areaServed: { '@type': 'City', name: 'Ahmedabad' },
+        offers: {
+          '@type': 'Offer',
+          priceCurrency: 'INR',
+          price: '8000',
+          description: 'Indicative for sangeet / mehndi-style events',
+          availability: 'https://schema.org/InStock',
+          url: 'https://harmonysalon.biz/contact',
+        },
+      },
+    },
+  ],
 };
 
 // Product Schema (for packages)

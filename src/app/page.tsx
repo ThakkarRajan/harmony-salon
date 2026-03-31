@@ -1,11 +1,22 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Hero from '@/components/Hero';
 import StatsRow from '@/components/StatsRow';
 import Container from '@/components/Container';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider';
 import TestimonialCarousel, { Testimonial } from '@/components/TestimonialCarousel';
 import Button from '@/components/Button';
-import JsonLD, { businessSchema } from '@/components/JsonLD';
+import JsonLD, { businessSchema, websiteSchema } from '@/components/JsonLD';
+
+export const metadata: Metadata = {
+  title: {
+    absolute:
+      'Harmony Salon Ahmedabad | Bridal Makeup Artist — Packages & Price List',
+  },
+  description:
+    'Harmony Salon in Bopal, Ahmedabad (near TRP Mall): bridal makeup packages, HD & 3D bridal makeup, engagement & party rates. Studio price list from ₹7,000–₹15,000; siders from ₹2,500. Book a complimentary trial.',
+  alternates: { canonical: 'https://harmonysalon.biz' },
+};
 
 const testimonials: Testimonial[] = [
   {
@@ -49,6 +60,7 @@ export default function Home() {
   return (
     <>
       <JsonLD data={businessSchema} />
+      <JsonLD data={websiteSchema} />
       
       <Hero
         title="Bridal Makeup that looks like you—just elevated."
@@ -126,9 +138,9 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <BeforeAfterSlider
-              beforeImage="https://images.unsplash.com/photo-1595475884562-073c30d45670?w=800"
+              beforeImage="htps://images.unsplash.com/photo-1595475884562-073c30d45670?w=800"
               afterImage="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800"
               alt="Bridal Makeup Transformation"
             />
@@ -137,7 +149,7 @@ export default function Home() {
               afterImage="https://images.unsplash.com/photo-1487412912498-0447578fcca8?w=800"
               alt="Party Makeup Transformation"
             />
-          </div>
+          </div> */}
 
           <div className="text-center mt-12">
             <Button href="/portfolio" size="lg">

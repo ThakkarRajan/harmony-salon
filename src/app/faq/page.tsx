@@ -7,12 +7,40 @@ import JsonLD, { createFAQSchema } from '@/components/JsonLD';
 import Button from '@/components/Button';
 
 export const metadata: Metadata = {
-  title: 'FAQ — Common Questions About Bridal Makeup | Harmony Salon',
-  description: 'Find answers to common questions about bridal makeup, pricing, booking, and services at Harmony Salon Ahmedabad.',
-  keywords: 'bridal makeup FAQ, makeup artist questions, bridal prep tips, Ahmedabad makeup',
+  title: 'FAQ — Bridal Makeup Cost, Package Prices & Booking',
+  description:
+    'Bridal makeup price in Ahmedabad, bridal package price list, HD party makeup cost, makeup artist fees, engagement makeup, pre-bridal — FAQs for Harmony Salon Bopal.',
+  keywords:
+    'bridal makeup price, bridal package price list, hd party makeup price, makeup artist fees, engagement makeup price, bridal makeup cost, harmony salon ahmedabad',
+  alternates: { canonical: 'https://harmonysalon.biz/faq' },
 };
 
 const faqs: FAQ[] = [
+  {
+    question: 'What is the bridal makeup price at Harmony Salon Ahmedabad?',
+    answer:
+      'Studio rates: Marriage Day bridal package (HD makeup, hairstyling & draping) is ₹15,000. Bride-side function (HD makeup & hairstyling) is ₹7,000. Siders packages are ₹2,500 (3D makeup & hair), ₹3,500 (HD), or ₹4,500 (full with flowers, lenses, lashes & extensions). HD party makeup typically starts from ₹6,000+; basic party from ₹4,000+. On-site weddings and travel are quoted separately — WhatsApp for your date.',
+  },
+  {
+    question: 'Where can I see your bridal package price list?',
+    answer:
+      'Our full studio price list is on the Prices page and the Bridal Packages page on this site. Both list Marriage Day, bride-side, siders tiers, plus party makeup, hair, and add-ons. Final quotes can vary by timing, location, and group size.',
+  },
+  {
+    question: 'How much does HD party makeup cost?',
+    answer:
+      'HD party makeup at our Bopal studio generally starts from ₹6,000+ depending on the look and schedule. Basic party makeup starts from ₹4,000+. Sangeet, mehndi, and heavier glam looks are often from ₹8,000–₹10,000+. Message us on WhatsApp with your event date for an exact quote.',
+  },
+  {
+    question: 'What are makeup artist fees for bridal and family in Ahmedabad?',
+    answer:
+      'Bridal studio fees are ₹15,000 (Marriage Day) or ₹7,000 (bride-side function), both with a complimentary trial. For bridesmaids and family (siders), studio packages are ₹2,500–₹4,500. On-site service includes travel bands (free within 10 km of our studio). For 5+ people we often offer a group discount — ask for a tailored package.',
+  },
+  {
+    question: 'Do you offer pre-bridal packages or only wedding-day makeup?',
+    answer:
+      'Our main packages are for wedding-day and event makeup (Marriage Day, bride-side, sangeet, engagement, reception). We also include a complimentary trial with bridal bookings. For pre-bridal grooming — nails, hair colour, extra trials, or skin-prep timing — contact us to customise. We are in Rajyash City, Bopal, Ahmedabad (near TRP Mall) and serve brides across the city.',
+  },
   {
     question: 'HD vs Airbrush—what should I choose?',
     answer: 'HD makeup uses high-definition products applied with traditional techniques (brushes/sponges). It gives a natural, skin-like finish and is great for most brides. Airbrush makeup is sprayed on using an airbrush gun, creating an ultra-smooth, flawless finish that photographs exceptionally well and lasts longer. We recommend airbrush for oily skin, long events (12+ hours), or if you want an extremely smooth, poreless look in close-up photos. During your trial, we can help you decide what works best for your skin type and preferences.',
@@ -43,7 +71,7 @@ const faqs: FAQ[] = [
   },
   {
     question: 'Can I see examples of your work?',
-    answer: 'Absolutely! Check out our Portfolio page to see before/after transformations and real bride photos. We also regularly post on Instagram @makeoverby_harmony with behind-the-scenes, Reels, and client stories. During your trial consultation, we can show you specific looks similar to what you\'re envisioning.',
+    answer: 'Absolutely! Check out our Portfolio page to see before/after transformations and real bride photos. We also regularly post on Instagram @harmony__salon with behind-the-scenes, Reels, and client stories. During your trial consultation, we can show you specific looks similar to what you\'re envisioning.',
   },
   {
     question: 'What should I bring to my trial?',
@@ -51,7 +79,7 @@ const faqs: FAQ[] = [
   },
   {
     question: 'Do you do makeup for bridesmaids and family?',
-    answer: 'Yes! We offer party makeup packages for bridesmaids, mother of the bride/groom, and family members. Pricing starts at ₹3,500 per person for basic party makeup. For groups of 5+, we offer a 15% discount. We can coordinate multiple artists to ensure everyone is ready on time.',
+    answer: 'Yes! For siders and family we offer studio packages: 3D makeup & hair from ₹2,500, HD from ₹3,500, and a full package (flowers, lenses, lashes & extensions) at ₹4,500. For mother-of-the-bride, bridesmaids, and larger groups, contact us for a tailored quote — for 5+ people we often offer a group discount. We can coordinate multiple artists so everyone is ready on time.',
   },
   {
     question: 'What is your cancellation policy?',
